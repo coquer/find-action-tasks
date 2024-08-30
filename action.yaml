@@ -1,0 +1,26 @@
+name: Find Action Task
+description: 'Small filter action'
+inputs:
+  key:
+    description: 'Values that need to be added as a string'
+    required: true
+  needle:
+    description: 'List of items to filter'
+    required: true
+  haystack:
+    description: 'List of items to filter from'
+    required: true
+  asString:
+    description: 'Convert the output to a string'
+    required: false
+    default: ''
+  taskKey:
+    description: 'key containing tasks'
+    required: false
+    default: 'tasks'
+outputs:
+  filtered:
+    description: 'Filtered list'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
