@@ -1,0 +1,58 @@
+[
+  {
+    "environment": "alive",
+    "tasks": []
+  },
+  {
+    "environment": "envs",
+    "tasks": [
+      {
+        "task": "api",
+        "service": "tester-api-test",
+        "overwrite": {
+          "executionRoleArn": "integration-cluster-test-exec",
+          "family": "tester-api-test",
+          "taskRoleArn": "tester-api-test-tasks",
+          "containerDefinitions.0.logConfiguration.options.awslogs-group": "/aws/ecs/tester-api-test"
+        }
+      },
+      {
+        "task": "clever-gateway",
+        "service": "tester-clever-gateway-test",
+        "overwrite": {
+          "executionRoleArn": "integration-cluster-test-exec",
+          "family": "tester-clever-gateway-test",
+          "taskRoleArn": "tester-api-test-tasks",
+          "containerDefinitions.0.logConfiguration.options.awslogs-group": "/aws/ecs/tester-clever-gateway-test"
+        }
+      },
+      {
+        "task": "worker",
+        "overwrite": {
+          "executionRoleArn": "integration-cluster-test-exec",
+          "family": "tester-worker-test",
+          "taskRoleArn": "tester-worker-test-tasks",
+          "containerDefinitions.0.logConfiguration.options.awslogs-group": "/aws/ecs/tester-worker-test"
+        }
+      },
+      {
+        "task": "monitor",
+        "overwrite": {
+          "executionRoleArn": "integration-cluster-test-exec",
+          "family": "tester-monitor-test",
+          "taskRoleArn": "tester-monitor-test-tasks",
+          "containerDefinitions.0.logConfiguration.options.awslogs-group": "/aws/ecs/tester-monitor-test"
+        }
+      },
+      {
+        "task": "clever-pull",
+        "overwrite": {
+          "executionRoleArn": "integration-cluster-test-exec",
+          "family": "tester-clever-pull-test",
+          "taskRoleArn": "tester-clever-pull-test-tasks",
+          "containerDefinitions.0.logConfiguration.options.awslogs-group": "/aws/ecs/tester-clever-pull-test"
+        }
+      }
+    ]
+  }
+]
