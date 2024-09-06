@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/coquer/find-action-tasks/compare/v1.0.1...v1.1.0) (2024-09-06)
+
+
+### Features
+
+* add support to additional runtine attachments ([a1e083f](https://github.com/coquer/find-action-tasks/commit/a1e083ffc13101656cddfaf2d95e11fb393809f0))
+
 ## [1.0.1](https://github.com/coquer/find-action-tasks/compare/v1.0.0...v1.0.1) (2024-09-06)
 
 
