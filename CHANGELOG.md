@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/coquer/find-action-tasks/compare/v1.0.0...v1.0.1) (2024-09-06)
+
+
+### Bug Fixes
+
+* **filter:** remove empty strings from split result ([bc5d59d](https://github.com/coquer/find-action-tasks/commit/bc5d59d1ce914d44d6f5be0eb0a1df5c11f76c76))
+
 ## 1.0.0 (2024-08-30)
 
 
