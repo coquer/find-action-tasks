@@ -26837,6 +26837,7 @@ async function run() {
     haystack: core.getInput('haystack', { required: true }),
     asString: core.getInput('asString', { required: false }),
     taskKey: core.getInput('taskKey', { required: false }),
+    attachments: core.getInput('attachments', { required: false }),
   }
 
   const haystack = await fs.promises.readFile(inputs.haystack, 'utf8')
@@ -26873,6 +26874,22 @@ async function run() {
   if (!resultHaystack) {
     core.setFailed('No matching key found');
     return
+  }
+
+  const attachments = inputs.attachments.split(';').filter((item) => item !== '');
+
+  if (attachments.length !== 0) {
+    attachments.forEach((attachment) => {
+      const [location, key, ...args] = attachment.split(',');
+      taskKeys.forEach((taskKeys) => {
+        let finalArgs = args.length > 1 ? args : args[0];
+        if (location === 'null') {
+          taskKeys[key] = finalArgs;
+        } else {
+          taskKeys[location][key] = finalArgs;
+        }
+      });
+    });
   }
 
   const innerJsonStrings = inputs.asString.split(',').filter((item) => item !== '');

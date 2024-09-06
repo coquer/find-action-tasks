@@ -18,6 +18,10 @@ inputs:
     description: 'key containing tasks'
     required: false
     default: 'tasks'
+  attachments:
+    description: 'key containing attachments'
+    required: false
+    default: ''
 outputs:
   filtered:
     description: 'Filtered list'
