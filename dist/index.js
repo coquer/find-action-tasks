@@ -26832,11 +26832,11 @@ const fs = __nccwpck_require__(7561);
 
 async function run() {
   const inputs = {
-    key: core.getInput('key', {required: true}),
-    needle: core.getInput('needle', {required: true}),
-    haystack: core.getInput('haystack', {required: true}),
-    asString : core.getInput('asString', {required: false}),
-    taskKey: core.getInput('taskKey', {required: false}),
+    key: core.getInput('key', { required: true }),
+    needle: core.getInput('needle', { required: true }),
+    haystack: core.getInput('haystack', { required: true }),
+    asString: core.getInput('asString', { required: false }),
+    taskKey: core.getInput('taskKey', { required: false }),
   }
 
   const haystack = await fs.promises.readFile(inputs.haystack, 'utf8')
@@ -26875,7 +26875,8 @@ async function run() {
     return
   }
 
-  const innerJsonStrings = inputs.asString.split(',');
+  const innerJsonStrings = inputs.asString.split(',').filter((item) => item !== '');
+
   if (innerJsonStrings.length !== 0) {
     innerJsonStrings.forEach((shouldBeString) => {
       taskKeys.forEach((taskKeys) => {
