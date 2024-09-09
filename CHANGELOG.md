@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/coquer/find-action-tasks/compare/v1.1.1...v1.1.2) (2024-09-09)
+
+
+### Miscellaneous
+
+* add support to multiple args ([6bb9dd7](https://github.com/coquer/find-action-tasks/commit/6bb9dd760f5236bb369dd03c7f11b32380778572))
+
 ## [1.1.1](https://github.com/coquer/find-action-tasks/compare/v1.1.0...v1.1.1) (2024-09-09)
 
 
