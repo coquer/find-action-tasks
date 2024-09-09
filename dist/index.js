@@ -26880,7 +26880,7 @@ async function run() {
 
   if (attachments.length !== 0) {
     attachments.forEach((attachment) => {
-      const [location, key, ...args] = attachment.split(',');
+      const [location, key, ...args] = attachment.split('|');
       taskKeys.forEach((taskKeys) => {
         let finalArgs = args.length > 1 ? args : args[0];
         if (location === 'null') {
