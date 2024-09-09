@@ -26883,6 +26883,22 @@ async function run() {
       const [location, key, ...args] = attachment.split('|');
       taskKeys.forEach((taskKeys) => {
         let finalArgs = args.length > 1 ? args : args[0];
+
+        if (finalArgs.length > 1) {
+          let cmd = finalArgs[0]
+          let result = [];
+          result.push(cmd);
+          finalArgs.shift();
+          finalArgs.forEach((arg) => {
+            let vals = arg.split('+').filter((item) => item !== '')
+            vals.forEach((val) => {
+              result.push(val)
+            })
+          })
+
+          finalArgs = result;
+        }
+
         if (location === 'null') {
           taskKeys[key] = finalArgs;
         } else {
