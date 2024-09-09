@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/coquer/find-action-tasks/compare/v1.1.0...v1.1.1) (2024-09-09)
+
+
+### Miscellaneous
+
+* change attachments seperator ([4f579ac](https://github.com/coquer/find-action-tasks/commit/4f579acc426304c434fc0decb1e8d261a554b4b9))
+
 ## [1.1.0](https://github.com/coquer/find-action-tasks/compare/v1.0.1...v1.1.0) (2024-09-06)
 
 
