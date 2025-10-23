@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/coquer/find-action-tasks/compare/v1.1.2...v1.1.3) (2025-10-23)
+
+
+### Miscellaneous
+
+* update deps ([e7a6d7e](https://github.com/coquer/find-action-tasks/commit/e7a6d7e796024644be9e7ee79b87ebd055e36c19))
+* update dist ([b149b27](https://github.com/coquer/find-action-tasks/commit/b149b2719f65b986cd652a0cdb0746ab3b562533))
+
 ## [1.1.2](https://github.com/coquer/find-action-tasks/compare/v1.1.1...v1.1.2) (2024-09-09)
 
 
