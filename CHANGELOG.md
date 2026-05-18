@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/coquer/find-action-tasks/compare/v1.2.0...v1.3.0) (2026-05-18)
+
+
+### Features
+
+* general build ([f1d9c35](https://github.com/coquer/find-action-tasks/commit/f1d9c354c5e37386470da20b883dc96bc96b6bf0))
+
 ## [1.2.0](https://github.com/coquer/find-action-tasks/compare/v1.1.3...v1.2.0) (2026-05-18)
 
 
