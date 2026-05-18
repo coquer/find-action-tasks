@@ -1,5 +1,6 @@
-const core = require('@actions/core');
-const fs = require('node:fs');
+import * as core from '@actions/core';
+import fs from 'node:fs';
+
 
 async function run() {
   const inputs = {

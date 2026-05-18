@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "package": "ncc build index.js -o dist --minify --no-cache --external @actions/core",
-    "test": "eslint index.js index.test.js && jest"
+    "package": "ncc build index.js -o dist --no-cache",
+    "test": "eslint index.js && jest"
   },
   "engines": {
     "node": ">=24"
