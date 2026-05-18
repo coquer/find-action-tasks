@@ -11,6 +11,7 @@ on:
 jobs:
   test-github-actions:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,3 +27,13 @@ jobs:
       - name: Package
         run: npm run package
 
+      - name: Verify it works
+        id: verify
+        uses: ./
+        with:
+          key: 'service'
+          needle: 'organization'
+          haystack: './haystack.json'
+
+      - name: Print output
+        run: echo "Filtered tasks ${{ steps.verify.outputs.filtered }}"
