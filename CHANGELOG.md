@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/coquer/find-action-tasks/compare/v1.1.3...v1.2.0) (2026-05-18)
+
+
+### Features
+
+* upgrade to node24 and patches ([4e59316](https://github.com/coquer/find-action-tasks/commit/4e59316827b750f91e0476e1063a872650959a66))
+
+
+### Miscellaneous
+
+* upgrade release please ([20dd77a](https://github.com/coquer/find-action-tasks/commit/20dd77a76c03afa55d1506c25386d99ad1302d52))
+
 ## [1.1.3](https://github.com/coquer/find-action-tasks/compare/v1.1.2...v1.1.3) (2025-10-23)
 
 
