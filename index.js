@@ -33,19 +33,14 @@ async function run() {
 
   if (!resultHaystack) {
     core.setFailed('No matching key found');
-    return
+    return;
   }
 
   const taskKeys = resultHaystack[inputs.taskKey];
 
   if (!taskKeys) {
     core.setFailed('No tasks found');
-    return
-  }
-
-  if (!resultHaystack) {
-    core.setFailed('No matching key found');
-    return
+    return;
   }
 
   const attachments = inputs.attachments.split(';').filter((item) => item !== '');
@@ -53,28 +48,23 @@ async function run() {
   if (attachments.length !== 0) {
     attachments.forEach((attachment) => {
       const [location, key, ...args] = attachment.split('|');
-      taskKeys.forEach((taskKeys) => {
-        let finalArgs = args.length > 1 ? args : args[0];
-
-        if (finalArgs.length > 1) {
-          let cmd = finalArgs[0]
-          let result = [];
-          result.push(cmd);
-          finalArgs.shift();
-          finalArgs.forEach((arg) => {
-            let vals = arg.split('+').filter((item) => item !== '')
-            vals.forEach((val) => {
-              result.push(val)
-            })
-          })
-
+      taskKeys.forEach((task) => {
+        let finalArgs;
+        if (args.length > 1) {
+          const [cmd, ...rest] = args;
+          const result = [cmd];
+          rest.forEach((arg) => {
+            arg.split('+').filter((item) => item !== '').forEach((val) => result.push(val));
+          });
           finalArgs = result;
+        } else {
+          finalArgs = args[0] ?? '';
         }
 
         if (location === 'null') {
-          taskKeys[key] = finalArgs;
+          task[key] = finalArgs;
         } else {
-          taskKeys[location][key] = finalArgs;
+          task[location][key] = finalArgs;
         }
       });
     });
@@ -84,10 +74,10 @@ async function run() {
 
   if (innerJsonStrings.length !== 0) {
     innerJsonStrings.forEach((shouldBeString) => {
-      taskKeys.forEach((taskKeys) => {
-        taskKeys[shouldBeString] = JSON.stringify(taskKeys[shouldBeString]);
-      })
-    })
+      taskKeys.forEach((task) => {
+        task[shouldBeString] = JSON.stringify(task[shouldBeString]);
+      });
+    });
   }
 
   const result = JSON.stringify(taskKeys);
@@ -98,4 +88,3 @@ async function run() {
 run().catch((error) => {
   core.setFailed(error.message);
 });
-

@@ -1,0 +1,16 @@
+[
+  {
+    "service": "organization",
+    "tasks": [
+      { "name": "build", "image": "golang:1.21" },
+      { "name": "test", "image": "golang:1.21" }
+    ]
+  },
+  {
+    "service": "dummy-web",
+    "tasks": [
+      { "name": "build", "image": "node:20" },
+      { "name": "test", "image": "node:20" }
+    ]
+  }
+]
