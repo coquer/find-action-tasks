@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/coquer/find-action-tasks/compare/v1.4.0...v1.4.1) (2026-05-19)
+
+
+### Miscellaneous
+
+* **deps-dev:** bump @types/node from 25.8.0 to 25.9.0 ([f7a8fee](https://github.com/coquer/find-action-tasks/commit/f7a8fee3d86403c815377bd5cf7450ad49969d5a))
+
 ## [1.4.0](https://github.com/coquer/find-action-tasks/compare/v1.3.0...v1.4.0) (2026-05-18)
 
 
